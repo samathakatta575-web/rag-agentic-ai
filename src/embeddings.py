@@ -1,26 +1,8 @@
-from langchain_openai import OpenAIEmbeddings
-
-from .config import OPENAI_API_KEY, EMBEDDING_MODEL
-
+from langchain_huggingface import HuggingFaceEmbeddings
 
 def create_embeddings():
-    """Create the OpenAI embedding model."""
-
-    if not OPENAI_API_KEY:
-        raise ValueError(
-            "OPENAI_API_KEY is missing. "
-            "Please add it to the .env file."
-        )
-
-    embeddings = OpenAIEmbeddings(
-        api_key=OPENAI_API_KEY,
-        model=EMBEDDING_MODEL
+    # Free model, no API key needed, no credits needed
+    embeddings = HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
-
-    print("Embedding model initialized successfully.")
-
     return embeddings
-
-
-if __name__ == "_main_":
-    create_embeddings()

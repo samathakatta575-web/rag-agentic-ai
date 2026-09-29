@@ -1,5 +1,5 @@
-from .loader import load_pdf, split_documents
-from .vectorstore import create_vectorstore
+from loader import load_pdf, split_documents
+from vectorstore import create_vectorstore_from_docs
 
 
 def run_ingestion():
@@ -11,7 +11,7 @@ def run_ingestion():
 
     chunks = split_documents(documents)
 
-    create_vectorstore(chunks)
+    create_vectorstore_from_docs(chunks)
 
     print("Ingestion completed successfully!")
 

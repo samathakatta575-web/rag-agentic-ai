@@ -1,7 +1,7 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from .config import PDF_PATH, CHUNK_SIZE, CHUNK_OVERLAP
+from config import PDF_PATH, CHUNK_SIZE, CHUNK_OVERLAP
 
 
 def load_pdf():

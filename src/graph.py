@@ -3,8 +3,8 @@ from typing import TypedDict, List
 from langgraph.graph import StateGraph, START, END
 from langchain_openai import ChatOpenAI
 
-from .retriever import create_retriever
-from .config import OPENAI_API_KEY, LLM_MODEL
+from retriever import create_retriever
+from config import OPENAI_API_KEY, LLM_MODEL
 
 
 class AgentState(TypedDict):
